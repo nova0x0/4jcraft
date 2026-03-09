@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "LinuxStubs.h"
 #include <cassert>
 #include <cstdarg>
 #include <sys/mman.h>
@@ -171,8 +172,9 @@ typedef float FLOAT;
 #define STATUS_PENDING                   ((DWORD   )0x00000103L)    
 #define STILL_ACTIVE                        STATUS_PENDING
 
-
+#ifndef INVALID_HANDLE_VALUE
 #define INVALID_HANDLE_VALUE ((HANDLE)(ULONG_PTR)-1)
+#endif
 
 // https://learn.microsoft.com/en-us/windows/win32/api/minwinbase/ns-minwinbase-filetime
 typedef struct _FILETIME {
@@ -282,6 +284,7 @@ static inline void InitializeCriticalSection(PRTL_CRITICAL_SECTION CriticalSecti
 
 static inline void InitializeCriticalSectionAndSpinCount(PRTL_CRITICAL_SECTION CriticalSection, ULONG SpinCount)
 {
+    (void)SpinCount;
     // no spin count required because we use a recursive mutex
     InitializeCriticalSection(CriticalSection);
 }
@@ -336,6 +339,7 @@ static inline BOOL TlsSetValue(DWORD dwTlsIndex, LPVOID lpTlsValue)
 // https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalmemorystatus
 static inline VOID GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer)
 {
+    (void)lpBuffer;
     // TODO: Parse /proc/meminfo and set lpBuffer based on that. Probably will also need another
     // different codepath for macOS too.
 }
@@ -396,6 +400,7 @@ static inline void _FillFindData(const char *name, const struct stat *st, WIN32_
 static inline HANDLE CreateFileA(const char *lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode,
     void *lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile)
 {
+    (void)dwShareMode; (void)lpSecurityAttributes; (void)dwFlagsAndAttributes; (void)hTemplateFile;
     int flags = 0;
     if ((dwDesiredAccess & GENERIC_READ) && (dwDesiredAccess & GENERIC_WRITE)) flags = O_RDWR;
     else if (dwDesiredAccess & GENERIC_WRITE) flags = O_WRONLY;
@@ -459,6 +464,7 @@ static inline BOOL GetFileSizeEx(HANDLE hFile, LARGE_INTEGER *lpFileSize)
 
 static inline BOOL ReadFile(HANDLE hFile, void *lpBuffer, DWORD nNumberOfBytesToRead, DWORD *lpNumberOfBytesRead, void *lpOverlapped)
 {
+    (void)lpOverlapped;
     ssize_t n = read((int)(intptr_t)hFile, lpBuffer, nNumberOfBytesToRead);
     if (lpNumberOfBytesRead) *lpNumberOfBytesRead = n >= 0 ? (DWORD)n : 0;
     return n >= 0;
@@ -466,6 +472,7 @@ static inline BOOL ReadFile(HANDLE hFile, void *lpBuffer, DWORD nNumberOfBytesTo
 
 static inline BOOL WriteFile(HANDLE hFile, const void *lpBuffer, DWORD nNumberOfBytesToWrite, DWORD *lpNumberOfBytesWritten, void *lpOverlapped)
 {
+    (void)lpOverlapped;
     ssize_t n = write((int)(intptr_t)hFile, lpBuffer, nNumberOfBytesToWrite);
     if (lpNumberOfBytesWritten) *lpNumberOfBytesWritten = n >= 0 ? (DWORD)n : 0;
     return n >= 0;
@@ -519,6 +526,7 @@ static inline BOOL GetFileAttributesEx(const char *lpFileName, GET_FILEEX_INFO_L
 
 static inline BOOL CreateDirectoryA(const char *lpPathName, void *lpSecurityAttributes)
 {
+    (void)lpSecurityAttributes;
     return mkdir(lpPathName, 0755) == 0;
 }
 
@@ -1018,9 +1026,13 @@ static inline int swprintf_s(wchar_t* buf, size_t sz, const wchar_t* fmt, ...) {
     return ret;
 }
 
-static inline HMODULE GetModuleHandle(LPCSTR lpModuleName) { return 0; }
+static inline HMODULE GetModuleHandle(LPCSTR lpModuleName) {
+    (void)lpModuleName;
+    return 0;
+}
 
 static inline LPVOID VirtualAlloc(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect) {
+    (void)flAllocationType;
     // MEM_COMMIT | MEM_RESERVE → mmap anonymous
     int prot = 0;
     if (flProtect == 0x04 /*PAGE_READWRITE*/) prot = PROT_READ | PROT_WRITE;

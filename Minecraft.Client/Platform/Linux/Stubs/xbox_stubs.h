@@ -7,9 +7,9 @@
 #if !defined( XBOXSTUBS_H ) && !defined( _X360 )
 #define XBOXSTUBS_H
 
-#ifdef _WIN32
 #pragma once
-#endif
+
+#include "LinuxStubs.h"
 
 // DecalOverdose: not available in 4J
 //#include "tier0/platform.h"
@@ -151,9 +151,9 @@ typedef struct _XSESSION_REGISTRATION_RESULTS
 FORCEINLINE void			XBX_ProcessEvents() {}
 FORCEINLINE unsigned int	XBX_GetSystemTime() { return 0; }
 FORCEINLINE	int				XBX_GetPrimaryUserId() { return 0; }
-FORCEINLINE	void			XBX_SetPrimaryUserId( DWORD idx ) {}
+FORCEINLINE	void			XBX_SetPrimaryUserId( DWORD idx ) { (void)idx; }
 FORCEINLINE	int				XBX_GetStorageDeviceId() { return 0; }
-FORCEINLINE	void			XBX_SetStorageDeviceId( DWORD idx ) {}
+FORCEINLINE	void			XBX_SetStorageDeviceId( DWORD idx ) { (void)idx; }
 FORCEINLINE const char		*XBX_GetLanguageString() { return ""; }
 FORCEINLINE bool			XBX_IsLocalized() { return false; }
 
