@@ -33,7 +33,7 @@ void UIControl_ButtonList::init(int id)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = id;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
 
  #ifdef __PSVITA__
  	// 4J-PB - add this buttonlist to the vita touch box list
@@ -60,7 +60,7 @@ void UIControl_ButtonList::ReInit()
 void UIControl_ButtonList::clearList()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_removeAllItemsFunc , 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_removeAllItemsFunc , 0 , NULL );
 
 	m_itemCount = 0;
 }
@@ -88,7 +88,7 @@ void UIControl_ButtonList::addItem(const std::string &label, int data)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = data;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 2 , value );
 
 	++m_itemCount;
 }
@@ -106,7 +106,7 @@ void UIControl_ButtonList::addItem(const std::wstring &label, int data)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = data;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 2 , value );
 
 	++m_itemCount;
 }
@@ -118,7 +118,7 @@ void UIControl_ButtonList::removeItem(int index)
 
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = index;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcRemoveItem , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcRemoveItem , 1 , value );
 
 	--m_itemCount;
 }
@@ -130,7 +130,7 @@ void UIControl_ButtonList::setCurrentSelection(int iSelection)
 
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = iSelection;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcHighlightItem , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcHighlightItem , 1 , value );
 }
 
 int UIControl_ButtonList::getCurrentSelection()
@@ -156,7 +156,7 @@ void UIControl_ButtonList::setButtonLabel(int iButtonId, const std::wstring &lab
 	stringVal.length = label.length();
 	value[1].type = IGGY_DATATYPE_string_UTF16;
 	value[1].string16 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcSetButtonLabel, 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcSetButtonLabel, 2 , value );
 }
 
 #ifdef __PSVITA__

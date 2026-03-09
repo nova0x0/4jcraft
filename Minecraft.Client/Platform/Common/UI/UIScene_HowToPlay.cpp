@@ -313,7 +313,7 @@ void UIScene_HowToPlay::StartPage( EHowToPlayPage ePage )
 		value[i+1].string16 = stringVal[i];
 	}
 
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcLoadPage , 1 + paragraphs.size(), value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcLoadPage , 1 + paragraphs.size(), value );
 
 	delete [] value;
 	delete [] stringVal;

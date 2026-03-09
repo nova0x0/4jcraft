@@ -221,7 +221,6 @@ void UIScene_SettingsOptionsMenu::handleInput(int iPad, int key, bool repeat, bo
 
 void UIScene_SettingsOptionsMenu::handleSliderMove(F64 sliderId, F64 currentValue)
 {
-	WCHAR TempString[256];
 	int value = (int)currentValue;
 	switch((int)sliderId)
 	{
@@ -239,11 +238,6 @@ void UIScene_SettingsOptionsMenu::handleSliderMove(F64 sliderId, F64 currentValu
 		app.SetGameSettings(m_iPad,eGameSetting_Difficulty,value);
 		
 		std::wstring wsText=app.GetString(m_iDifficultySettingA[value]);
-		EHTMLFontSize size = eHTMLSize_Normal;
-		if(!RenderManager.IsHiDef() && !RenderManager.IsWidescreen())
-		{
-			size = eHTMLSize_Splitscreen;
-		}
 		wchar_t startTags[64];
 		swprintf(startTags,64,L"<font color=\"#%08x\">",app.GetHTMLColour(eHTMLColor_White));
 		wsText= startTags + wsText;

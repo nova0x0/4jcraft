@@ -23,7 +23,7 @@ UIScene_ControlsMenu::UIScene_ControlsMenu(int iPad, void *initData, UILayer *pa
 #elif defined(__PSVITA__)
 	value[0].number = (F64)4;
 #endif
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlatform , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlatform , 1 , value );
 
 	bool bNotInGame=(Minecraft::GetInstance()->level==NULL);
 
@@ -85,7 +85,7 @@ UIScene_ControlsMenu::UIScene_ControlsMenu(int iPad, void *initData, UILayer *pa
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = (F64)m_iCurrentNavigatedControlsLayout;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetControllerLayout , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetControllerLayout , 1 , value );
 	}
 
 #ifdef __ORBIS__

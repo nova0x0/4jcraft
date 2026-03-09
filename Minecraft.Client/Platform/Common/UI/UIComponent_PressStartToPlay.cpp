@@ -67,7 +67,7 @@ void UIComponent_PressStartToPlay::handleReload()
 			value[0].type = IGGY_DATATYPE_number;
 			value[0].number = i;
 
-			IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowController , 1 , value );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowController , 1 , value );
 		}
 	}
 		m_controlPressStartPanel.setVisible(showPressStart);
@@ -99,7 +99,7 @@ void UIComponent_PressStartToPlay::showPressStart(int iPad, bool show)
 			value[0].type = IGGY_DATATYPE_number;
 			value[0].number = iPad;
 
-			IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowController , 1 , value );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowController , 1 , value );
 		}
 	}
 }

@@ -265,7 +265,7 @@ void UIScene_QuadrantSignin::setControllerState(int iPad, EControllerStatus stat
 		value[1].type = IGGY_DATATYPE_number;
 		value[1].number = (int)state;
 
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetControllerStatus , 2 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetControllerStatus , 2 , value );
 	}
 }
 

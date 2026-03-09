@@ -24,7 +24,7 @@ UIComponent_DebugUIMarketingGuide::UIComponent_DebugUIMarketingGuide(int iPad, v
 #elif defined _WINDOWS64
 	value[0].number = (F64)0;
 #endif
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlatform , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlatform , 1 , value );
 }
 
 std::wstring UIComponent_DebugUIMarketingGuide::getMoviePath()

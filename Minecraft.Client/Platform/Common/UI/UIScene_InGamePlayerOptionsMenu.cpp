@@ -193,7 +193,7 @@ UIScene_InGamePlayerOptionsMenu::UIScene_InGamePlayerOptionsMenu(int iPad, void 
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = colourIndex;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlayerIcon , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlayerIcon , 1 , value );
 
 #if TO_BE_IMPLEMENTED
 	if(app.GetLocalPlayerCount()>1)

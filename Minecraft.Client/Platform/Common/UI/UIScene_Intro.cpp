@@ -47,7 +47,7 @@ UIScene_Intro::UIScene_Intro(int iPad, void *initData, UILayer *parentLayer) : U
 
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = bSkipESRB;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetIntroPlatform , 2 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetIntroPlatform , 2 , value );
 
 #ifdef __PSVITA__
 	// initialise vita touch controls with ids

@@ -482,7 +482,6 @@ void UIScene_InGameInfoMenu::OnPlayerChanged(void *callbackParam, INetworkPlayer
 {
 	UIScene_InGameInfoMenu *scene = (UIScene_InGameInfoMenu *)callbackParam;
 	bool playerFound = false;
-	int foundIndex = 0;
 	for(int i = 0; i < scene->m_playersCount; ++i)
 	{
 		if(!playerFound && scene->m_players[i] == pPlayer->GetSmallId() )
@@ -493,7 +492,6 @@ void UIScene_InGameInfoMenu::OnPlayerChanged(void *callbackParam, INetworkPlayer
 			}
 			// Player removed
 			playerFound = true;
-			foundIndex = i;
 		}
 	}
 

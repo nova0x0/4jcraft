@@ -192,7 +192,7 @@ CFontData::CFontData(SFontData &sFontData, int *pbRawImage)
 		int row,column;
 		getPos(glyph,row,column);
 
-		short xMax = 0, _x=0, _y=0;
+		short xMax = 0;
 
 		// Find the position of the topLeft corner.
 		unsigned char *topLeft = m_pbRawImage, *cursor;
@@ -201,7 +201,6 @@ CFontData::CFontData(SFontData &sFontData, int *pbRawImage)
 		assert( ((column+1)*sFontData.m_uiGlyphWidth) < sFontData.m_uiGlyphMapX );
 		assert( ((row+1)*sFontData.m_uiGlyphHeight) < sFontData.m_uiGlyphMapY );
 
-		static int XX = 79;
 		// Find the furthest filled pixel to the right.
 		for (short y = 0; y < sFontData.m_uiGlyphHeight; y++)
 		{
@@ -215,8 +214,6 @@ CFontData::CFontData(SFontData &sFontData, int *pbRawImage)
 				if ( *cursor > 0 )
 				{
 					if (x > xMax) xMax = x;
-					_x = x;
-					_y = y;
 				}
 			}
 		}

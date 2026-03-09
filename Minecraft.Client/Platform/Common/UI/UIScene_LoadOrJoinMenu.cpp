@@ -143,8 +143,6 @@ UIScene_LoadOrJoinMenu::UIScene_LoadOrJoinMenu(int iPad, void *initData, UILayer
 #endif
 
 
-    int iLB = -1;
-
 #ifdef _XBOX
     XPARTY_USER_LIST partyList;
 
@@ -440,9 +438,6 @@ void UIScene_LoadOrJoinMenu::Initialise()
     }
     else
     {
-        // 4J-PB - we need to check that there is enough space left to create a copy of the save (for a rename)
-        bool bCanRename = StorageManager.EnoughSpaceForAMinSaveGame();
-
         GetSaveInfo();
     }
 
@@ -872,12 +867,13 @@ void UIScene_LoadOrJoinMenu::GetSaveInfo()
         m_controlSavesTimer.setVisible(true);
 
         m_pSaveDetails=StorageManager.ReturnSavesInfo();
+
+#if TO_BE_IMPLEMENTED
         if(m_pSaveDetails==NULL)
         {
             C4JStorage::ESaveGameState eSGIStatus= StorageManager.GetSavesInfo(m_iPad,NULL,this,(char*)"save"); 
         }
 
-#if TO_BE_IMPLEMENTED
         if(eSGIStatus==C4JStorage::ESGIStatus_NoSaves)
         {
             uiSaveC=0;

@@ -23,7 +23,7 @@ bool UIControl_HTMLLabel::setupControl(UIScene *scene, IggyValuePath *parent, co
 void UIControl_HTMLLabel::startAutoScroll()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcStartAutoScroll , 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcStartAutoScroll , 0 , NULL );
 }
 
 void UIControl_HTMLLabel::ReInit()
@@ -44,7 +44,7 @@ void UIControl_HTMLLabel::setLabel(const std::string &label)
 	stringVal.length = label.length();
 	value[0].string8 = stringVal;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setLabelFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setLabelFunc , 1 , value );
 }
 
 void UIControl_HTMLLabel::SetupTouch()
@@ -73,13 +73,13 @@ void UIControl_HTMLLabel::TouchScroll(S32 iY, bool bActive)
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = bActive;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcTouchScroll, 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcTouchScroll, 2 , value );
 }
 
 S32 UIControl_HTMLLabel::GetRealWidth()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealWidth, 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealWidth, 0 , NULL );
 
 	S32 iRealWidth = m_width;
 	if(result.type == IGGY_DATATYPE_number)
@@ -92,7 +92,7 @@ S32 UIControl_HTMLLabel::GetRealWidth()
 S32 UIControl_HTMLLabel::GetRealHeight()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealHeight, 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealHeight, 0 , NULL );
 
 	S32 iRealHeight = m_height;
 	if(result.type == IGGY_DATATYPE_number)

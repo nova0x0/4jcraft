@@ -368,7 +368,7 @@ void UIScene_AnvilMenu::setCostLabel(const std::wstring &label, bool canAfford)
 
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = canAfford;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetCostLabel , 2 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetCostLabel , 2 , value );
 }
 
 void UIScene_AnvilMenu::showCross(bool show)
@@ -380,7 +380,7 @@ void UIScene_AnvilMenu::showCross(bool show)
 
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowRedCross , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowRedCross , 1 , value );
 
 		m_showingCross = show;
 	}

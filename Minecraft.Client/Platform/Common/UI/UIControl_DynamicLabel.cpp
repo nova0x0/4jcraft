@@ -34,7 +34,7 @@ void UIControl_DynamicLabel::addText(const std::wstring &text, bool bLastEntry)
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = bLastEntry;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcAddText , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcAddText , 2 , value );
 }
 
 void UIControl_DynamicLabel::ReInit()
@@ -68,13 +68,13 @@ void UIControl_DynamicLabel::TouchScroll(S32 iY, bool bActive)
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = bActive;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcTouchScroll, 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcTouchScroll, 2 , value );
 }
 
 S32 UIControl_DynamicLabel::GetRealWidth()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealWidth, 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealWidth, 0 , NULL );
 
 	S32 iRealWidth = m_width;
 	if(result.type == IGGY_DATATYPE_number)
@@ -87,7 +87,7 @@ S32 UIControl_DynamicLabel::GetRealWidth()
 S32 UIControl_DynamicLabel::GetRealHeight()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealHeight, 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealHeight, 0 , NULL );
 
 	S32 iRealHeight = m_height;
 	if(result.type == IGGY_DATATYPE_number)

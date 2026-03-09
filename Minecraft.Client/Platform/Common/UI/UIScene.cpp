@@ -101,7 +101,7 @@ void UIScene::reloadMovie(bool force)
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = m_iFocusControl;
 
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetFocus , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetFocus , 1 , value );
 
 	m_needsCacheRendered = true;
 	m_bIsReloading = false;
@@ -220,7 +220,7 @@ void UIScene::setSafeZone(S32 safeTop, S32 safeBottom, S32 safeLeft, S32 safeRig
 	value[2].number = safeLeft;
 	value[3].type = IGGY_DATATYPE_number;
 	value[3].number = safeRight;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetSafeZone , 4 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetSafeZone , 4 , value );
 }
 
 void UIScene::initialiseMovie()
@@ -391,12 +391,12 @@ void UIScene::getDebugMemoryUseRecursive(const std::wstring &moviePath, IggyMemo
 	rrbool res;
 	IggyMemoryUseInfo internalMemoryInfo;
 	int internalIteration = 0;
-	while(res = IggyDebugGetMemoryUseInfo ( swf ,
+	while((res = IggyDebugGetMemoryUseInfo ( swf ,
 		0 ,
 		memoryInfo.subcategory ,
 		memoryInfo.subcategory_stringlen ,
 		internalIteration ,
-		&internalMemoryInfo ))
+		&internalMemoryInfo )))
 	{
 		app.DebugPrintf(app.USER_SR, "%ls - %.*s static: %d ( %d ) dynamic: %d ( %d )\n", moviePath.c_str(), internalMemoryInfo.subcategory_stringlen, internalMemoryInfo.subcategory, 
 			internalMemoryInfo.static_allocation_bytes, internalMemoryInfo.static_allocation_count, internalMemoryInfo.dynamic_allocation_bytes, internalMemoryInfo.dynamic_allocation_count);
@@ -414,12 +414,12 @@ void UIScene::PrintTotalMemoryUsage(__int64 &totalStatic, __int64 &totalDynamic)
 	int iteration = 0;
 	__int64 sceneStatic = 0;
 	__int64 sceneDynamic = 0;
-	while(res = IggyDebugGetMemoryUseInfo ( swf ,
+	while((res = IggyDebugGetMemoryUseInfo ( swf ,
 		0 ,
 		"" ,
 		0 ,
 		iteration ,
-		&memoryInfo ))
+		&memoryInfo )))
 	{
 		sceneStatic += memoryInfo.static_allocation_bytes;
 		sceneDynamic += memoryInfo.dynamic_allocation_bytes;
@@ -527,7 +527,7 @@ void UIScene::removeControl( UIControl_Base *control, bool centreScene)
 
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = centreScene;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcRemoveObject , 2 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcRemoveObject , 2 , value );
 
 #ifdef __PSVITA__
 	// update the button positions since they may have changed
@@ -544,19 +544,19 @@ void UIScene::removeControl( UIControl_Base *control, bool centreScene)
 void UIScene::slideLeft()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSlideLeft , 0 , NULL );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSlideLeft , 0 , NULL );
 }
 
 void UIScene::slideRight()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSlideRight , 0 , NULL );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSlideRight , 0 , NULL );
 }
 
 void UIScene::doHorizontalResizeCheck()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcHorizontalResizeCheck , 0 , NULL );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcHorizontalResizeCheck , 0 , NULL );
 }
 
 void UIScene::render(S32 width, S32 height, C4JRender::eViewportType viewport)
@@ -583,7 +583,7 @@ void UIScene::setOpacity(float percent)
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = percent;
 
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetAlpha , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetAlpha , 1 , value );
 	}
 }
 

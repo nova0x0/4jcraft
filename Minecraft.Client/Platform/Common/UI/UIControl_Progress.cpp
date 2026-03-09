@@ -40,7 +40,7 @@ void UIControl_Progress::init(const std::wstring &label, int id, int min, int ma
 	stringVal.length = label.length();
 	value[0].string16 = stringVal;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
 }
 
 void UIControl_Progress::ReInit()
@@ -64,7 +64,7 @@ void UIControl_Progress::setProgress(int current)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = percent;
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setProgressFunc , 1 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setProgressFunc , 1 , value );
 	}
 }
 
@@ -79,6 +79,6 @@ void UIControl_Progress::showBar(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_showBarFunc , 1 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_showBarFunc , 1 , value );
 	}
 }

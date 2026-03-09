@@ -294,7 +294,7 @@ void UIScene_HUD::SetHudSize(int scale)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = scale;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcLoadHud , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcLoadHud , 1 , value );
 	}
 }
 
@@ -308,7 +308,7 @@ void UIScene_HUD::SetExpBarProgress(float progress)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = progress;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetExpBarProgress , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetExpBarProgress , 1 , value );
 	}
 }
 
@@ -322,7 +322,7 @@ void UIScene_HUD::SetExpLevel(int level)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = level;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlayerLevel , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetPlayerLevel , 1 , value );
 	}
 }
 
@@ -336,7 +336,7 @@ void UIScene_HUD::SetActiveSlot(int slot)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = slot;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetActiveSlot , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetActiveSlot , 1 , value );
 	}
 }
 
@@ -357,7 +357,7 @@ void UIScene_HUD::SetHealth(int iHealth, int iLastHealth, bool bBlink, bool bPoi
 		value[1].boolval = bBlink;
 		value[2].type = IGGY_DATATYPE_boolean;
 		value[2].boolval = bPoison;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetHealth , 3 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetHealth , 3 , value );
 	}
 }
 
@@ -376,7 +376,7 @@ void UIScene_HUD::SetFood(int iFood, int iLastFood, bool bPoison)
 		value[0].number = maxFood;
 		value[1].type = IGGY_DATATYPE_boolean;
 		value[1].boolval = bPoison;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetFood , 2 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetFood , 2 , value );
 	}
 }
 
@@ -391,7 +391,7 @@ void UIScene_HUD::SetAir(int iAir)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = iAir;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetAir , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetAir , 1 , value );
 	}
 }
 
@@ -406,7 +406,7 @@ void UIScene_HUD::SetArmour(int iArmour)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = iArmour;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetArmour , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetArmour , 1 , value );
 	}
 }
 
@@ -421,7 +421,7 @@ void UIScene_HUD::ShowHealth(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowHealth , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowHealth , 1 , value );
 	}
 }
 
@@ -436,7 +436,7 @@ void UIScene_HUD::ShowFood(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowFood , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowFood , 1 , value );
 	}
 }
 
@@ -451,7 +451,7 @@ void UIScene_HUD::ShowAir(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowAir , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowAir , 1 , value );
 	}
 }
 
@@ -466,7 +466,7 @@ void UIScene_HUD::ShowArmour(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowArmour , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowArmour , 1 , value );
 	}
 }
 
@@ -481,7 +481,7 @@ void UIScene_HUD::ShowExpBar(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowExpbar , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowExpbar , 1 , value );
 	}
 }
 
@@ -496,7 +496,7 @@ void UIScene_HUD::SetRegenerationEffect(bool bEnabled)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = bEnabled;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetRegenerationEffect , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetRegenerationEffect , 1 , value );
 	}
 }
 
@@ -511,7 +511,7 @@ void UIScene_HUD::SetFoodSaturationLevel(int iSaturation)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = iSaturation;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetFoodSaturationLevel , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetFoodSaturationLevel , 1 , value );
 	}
 }
 
@@ -526,7 +526,7 @@ void UIScene_HUD::SetDragonHealth(float health)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = health;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetDragonHealth , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetDragonHealth , 1 , value );
 	}
 }
 
@@ -539,7 +539,7 @@ void UIScene_HUD::SetDragonLabel(const std::wstring &label)
 	stringVal.length = label.length();
 	value[0].type = IGGY_DATATYPE_string_UTF16;
 	value[0].string16 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetDragonLabel , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetDragonLabel , 1 , value );
 }
 
 void UIScene_HUD::ShowDragonHealth(bool show)
@@ -553,7 +553,7 @@ void UIScene_HUD::ShowDragonHealth(bool show)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = show;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowDragonHealth , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcShowDragonHealth , 1 , value );
 	}
 }
 
@@ -569,13 +569,13 @@ void UIScene_HUD::SetSelectedLabel(const std::wstring &label)
 	stringVal.length = label.length();
 	value[0].type = IGGY_DATATYPE_string_UTF16;
 	value[0].string16 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetSelectedLabel , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetSelectedLabel , 1 , value );
 }
 
 void UIScene_HUD::HideSelectedLabel()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcHideSelectedLabel , 0 , NULL );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcHideSelectedLabel , 0 , NULL );
 }
 
 void UIScene_HUD::render(S32 width, S32 height, C4JRender::eViewportType viewport)
@@ -749,7 +749,7 @@ void UIScene_HUD::SetDisplayName(const std::wstring &displayName)
 		stringVal.length = displayName.length();
 		value[0].type = IGGY_DATATYPE_string_UTF16;
 		value[0].string16 = stringVal;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetDisplayName , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetDisplayName , 1 , value );
 
 		m_labelDisplayName.setVisible(m_lastShowDisplayName);
 	}
@@ -765,7 +765,7 @@ void UIScene_HUD::SetTooltipsEnabled(bool bEnabled)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = bEnabled;
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetTooltipsEnabled , 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetTooltipsEnabled , 1 , value );
 	}
 }
 

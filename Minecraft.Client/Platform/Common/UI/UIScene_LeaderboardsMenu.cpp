@@ -848,7 +848,7 @@ void UIScene_LeaderboardsMenu::CopyLeaderboardEntry(LeaderboardManager::ReadScor
 
 void UIScene_LeaderboardsMenu::PopulateLeaderboard(LeaderboardManager::eStatsReturn ret)
 {
-	int iValidSlots=SetLeaderboardTitleIcons();
+	SetLeaderboardTitleIcons();
 	if( ret == LeaderboardManager::eStatsReturn_Success && m_leaderboard.m_totalEntryCount > 0 )
 	{
 		m_listEntries.setupTitles( app.GetString( IDS_LEADERBOARD_RANK ), app.GetString( IDS_LEADERBOARD_GAMERTAG ) );

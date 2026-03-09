@@ -204,6 +204,8 @@ void UIComponent_Tooltips::render(S32 width, S32 height, C4JRender::eViewportTyp
 			xPos = (S32)(ui.getScreenWidth() / 2);
 			yPos = (S32)(ui.getScreenHeight() / 2);
 			break;
+                default:
+                        break;
 		}
 		ui.setupRenderPosition(xPos, yPos);
 
@@ -232,6 +234,8 @@ void UIComponent_Tooltips::render(S32 width, S32 height, C4JRender::eViewportTyp
 		case C4JRender::VIEWPORT_TYPE_QUADRANT_BOTTOM_RIGHT:
 			tileYStart = (S32)(m_movieHeight / 2);
 			break;
+                default:
+                        break;
 		}
 
 		IggyPlayerSetDisplaySize( getMovie(), m_movieWidth, m_movieHeight );
@@ -328,7 +332,7 @@ void UIComponent_Tooltips::_SetTooltip(unsigned int iToolTipId, const std::wstri
 
 	value[2].type = IGGY_DATATYPE_boolean;
 	value[2].boolval = show;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetTooltip , 3 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetTooltip , 3 , value );
 
 	app.DebugPrintf("Actual tooltip update!\n");
 }
@@ -336,7 +340,7 @@ void UIComponent_Tooltips::_SetTooltip(unsigned int iToolTipId, const std::wstri
 void UIComponent_Tooltips::_Relayout()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcUpdateLayout, 0 , NULL );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcUpdateLayout, 0 , NULL );
 
 #ifdef __PSVITA__
 	// rebuild touchboxes

@@ -138,7 +138,7 @@ void UIScene_EndPoem::tick()
 		value[2].type = IGGY_DATATYPE_boolean;
 		value[2].boolval = (m_requestedLabel == (m_paragraphs.size() - 1));
 
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetNextLabel , 3 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetNextLabel , 3 , value );
 
 		m_requestedLabel = -1;
 	}

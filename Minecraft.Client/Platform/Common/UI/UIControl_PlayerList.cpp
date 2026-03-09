@@ -33,7 +33,7 @@ void UIControl_PlayerList::addItem(const std::wstring &label, int iPlayerIcon, i
 
 	value[3].type = IGGY_DATATYPE_number;
 	value[3].number = iVOIPIcon + 1;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 4 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 4 , value );
 
 	++m_itemCount;
 }
@@ -48,7 +48,7 @@ void UIControl_PlayerList::setPlayerIcon(int iId, int iPlayerIcon)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = iPlayerIcon + 1;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetPlayerIcon , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetPlayerIcon , 2 , value );
 }
 
 void UIControl_PlayerList::setVOIPIcon(int iId, int iVOIPIcon)
@@ -61,5 +61,5 @@ void UIControl_PlayerList::setVOIPIcon(int iId, int iVOIPIcon)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = iVOIPIcon + 1;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetVOIPIcon , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetVOIPIcon , 2 , value );
 }

@@ -19,7 +19,7 @@ UIScene_SaveMessage::UIScene_SaveMessage(int iPad, void *initData, UILayer *pare
 	IggyDataValue result;
 
 	// Russian needs to resize the box
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAutoResize , 0 , NULL );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAutoResize , 0 , NULL );
 
 	// 4J-PB - If we have a signed in user connected, let's get the DLC now
 	for(unsigned int i = 0; i < XUSER_MAX_COUNT; ++i)

@@ -8,8 +8,6 @@ UIScene_SettingsMenu::UIScene_SettingsMenu(int iPad, void *initData, UILayer *pa
 	// Setup all the Iggy references we need for this scene
 	initialiseMovie();
 	
-	bool bNotInGame=(Minecraft::GetInstance()->level==NULL);
-
 	m_buttons[BUTTON_ALL_OPTIONS].init(app.GetString(IDS_OPTIONS),BUTTON_ALL_OPTIONS);
 	m_buttons[BUTTON_ALL_AUDIO].init(app.GetString(IDS_AUDIO),BUTTON_ALL_AUDIO);
 	m_buttons[BUTTON_ALL_CONTROL].init(app.GetString(IDS_CONTROL),BUTTON_ALL_CONTROL);

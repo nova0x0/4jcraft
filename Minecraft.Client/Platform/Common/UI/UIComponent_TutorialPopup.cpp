@@ -62,7 +62,7 @@ void UIComponent_TutorialPopup::handleReload()
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_boolean;
 	value[0].boolval = (bool)((app.GetGameSettings(ProfileManager.GetPrimaryPad(),eGameSetting_DisplaySplitscreenGamertags)!=0) && !m_bContainerMenuVisible);	// 4J - TomK - Offset for splitscreen gamertag?
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAdjustLayout, 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAdjustLayout, 1 , value );
 }
 
 void UIComponent_TutorialPopup::SetTutorialDescription(TutorialPopupInfo *info)
@@ -195,7 +195,7 @@ void UIComponent_TutorialPopup::_SetDescription(UIScene *interactScene, const st
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_boolean;
 		value[0].boolval = (m_bSplitscreenGamertagVisible && !m_bContainerMenuVisible);	// 4J - TomK - Offset for splitscreen gamertag?
-		IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAdjustLayout, 1 , value );
+		IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAdjustLayout, 1 , value );
 	}
 }
 
@@ -490,6 +490,8 @@ void UIComponent_TutorialPopup::render(S32 width, S32 height, C4JRender::eViewpo
 			xPos = (S32)(ui.getScreenWidth() / 2);
 			yPos = (S32)(ui.getScreenHeight() / 2);
 			break;
+                default:
+                        break;
 		}
 		//Adjust for safezone
 		switch( viewport )
@@ -501,6 +503,8 @@ void UIComponent_TutorialPopup::render(S32 width, S32 height, C4JRender::eViewpo
 			case C4JRender::VIEWPORT_TYPE_QUADRANT_TOP_RIGHT:
 				yPos += getSafeZoneHalfHeight();
 				break;
+                        default:
+                                break;
 		}
 		switch( viewport )
 		{
@@ -511,6 +515,8 @@ void UIComponent_TutorialPopup::render(S32 width, S32 height, C4JRender::eViewpo
 			case C4JRender::VIEWPORT_TYPE_QUADRANT_BOTTOM_RIGHT:
 				xPos -= getSafeZoneHalfWidth();
 				break;
+                        default:
+                                break;
 		}
 		ui.setupRenderPosition(xPos, yPos);
 
@@ -535,5 +541,5 @@ void UIComponent_TutorialPopup::setupIconHolder(EIcons icon)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = (F64)icon;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetupIconHolder , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetupIconHolder , 1 , value );
 }

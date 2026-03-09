@@ -277,7 +277,6 @@ void UIScene_TeleportMenu::OnPlayerChanged(void *callbackParam, INetworkPlayer *
 {
 	UIScene_TeleportMenu *scene = (UIScene_TeleportMenu *)callbackParam;
 	bool playerFound = false;
-	int foundIndex = 0;
 	for(int i = 0; i < scene->m_playersCount; ++i)
 	{
 		if(!playerFound && scene->m_players[i] == pPlayer->GetSmallId() )
@@ -288,7 +287,6 @@ void UIScene_TeleportMenu::OnPlayerChanged(void *callbackParam, INetworkPlayer *
 			}
 			// Player removed
 			playerFound = true;
-			foundIndex = i;
 		}
 	}
 

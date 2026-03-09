@@ -64,7 +64,7 @@ void UIControl_SaveList::addItem(const std::string &label, const std::wstring &i
 	stringVal2.length = iconName.length();
 	value[2].type = IGGY_DATATYPE_string_UTF16;
 	value[2].string16 = stringVal2;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 3 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 3 , value );
 }
 
 void UIControl_SaveList::addItem(const std::wstring &label, const std::wstring &iconName, int data)
@@ -86,7 +86,7 @@ void UIControl_SaveList::addItem(const std::wstring &label, const std::wstring &
 	stringVal2.length = iconName.length();
 	value[2].type = IGGY_DATATYPE_string_UTF16;
 	value[2].string16 = stringVal2;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 3 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addNewItemFunc , 3 , value );
 }
 
 void UIControl_SaveList::setTextureName(int iId, const std::wstring &iconName)
@@ -102,5 +102,5 @@ void UIControl_SaveList::setTextureName(int iId, const std::wstring &iconName)
 	stringVal.length = iconName.length();
 	value[1].type = IGGY_DATATYPE_string_UTF16;
 	value[1].string16 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetTextureName , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetTextureName , 2 , value );
 }

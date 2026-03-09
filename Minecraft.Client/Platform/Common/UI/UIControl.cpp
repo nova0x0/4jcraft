@@ -73,7 +73,7 @@ void UIControl::ReInit()
 		value[1].type = IGGY_DATATYPE_number;
 		value[1].number = m_lastOpacity;
 
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, m_parentScene->m_rootPath , m_funcSetAlpha , 2 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, m_parentScene->m_rootPath , m_funcSetAlpha , 2 , value );
 	}
 
 	IggyValueSetBooleanRS( getIggyValuePath(), m_nameVisible, NULL, m_isVisible );
@@ -122,7 +122,7 @@ void UIControl::setOpacity(float percent)
 		value[1].type = IGGY_DATATYPE_number;
 		value[1].number = m_lastOpacity;
 
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, m_parentScene->m_rootPath , m_funcSetAlpha , 2 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, m_parentScene->m_rootPath , m_funcSetAlpha , 2 , value );
 	}
 }
 
@@ -140,7 +140,7 @@ bool UIControl::getVisible()
 {
 	rrbool bVisible = false;
 	
-	IggyResult result = IggyValueGetBooleanRS ( getIggyValuePath() , m_nameVisible, NULL, &bVisible );
+	IggyValueGetBooleanRS ( getIggyValuePath() , m_nameVisible, NULL, &bVisible );
 	
 	m_isVisible = bVisible;
 	

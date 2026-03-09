@@ -659,7 +659,6 @@ void IUIScene_CreativeMenu::TabSpec::populateMenu(AbstractContainerMenu *menu, i
 
 	// Fill from the static groups
 	unsigned int startIndex = page * m_staticPerPage;
-	int remainingItems = m_staticItems - startIndex;
 
 	// Work out the first group with an item the want to display, and which item in that group
 	unsigned int currentIndex = 0;
@@ -955,6 +954,8 @@ bool IUIScene_CreativeMenu::IsSectionSlotList( ESceneSection eSection )
 		case eSectionInventoryCreativeUsing:
 		case eSectionInventoryCreativeSelector:
 			return true;
+                default:
+                        break;
 	}
 	return false;
 }
@@ -966,6 +967,8 @@ bool IUIScene_CreativeMenu::CanHaveFocus( ESceneSection eSection )
 		case eSectionInventoryCreativeUsing:
 		case eSectionInventoryCreativeSelector:
 			return true;
+                default:
+                        break;
 	}
 	return false;
 }

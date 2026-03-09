@@ -315,7 +315,7 @@ void UIScene_InventoryMenu::updateEffectsDisplay()
 			int seconds = effect->getDuration() / SharedConstants::TICKS_PER_SECOND;
 			value[2].type = IGGY_DATATYPE_number;
 			value[2].number = seconds;
-			IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAddEffect , 3 , value );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcAddEffect , 3 , value );
 		}
 
 		if(MobEffect::effects[effect->getId()]->hasIcon())
@@ -332,7 +332,7 @@ void UIScene_InventoryMenu::updateEffectsDisplay()
 	}
 
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcUpdateEffects , activeEffects->size()*2 , UpdateValue );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcUpdateEffects , activeEffects->size()*2 , UpdateValue );
 
 	delete activeEffects;
 }

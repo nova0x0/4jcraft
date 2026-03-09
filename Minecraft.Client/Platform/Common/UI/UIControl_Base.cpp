@@ -41,7 +41,7 @@ void UIControl_Base::tick()
 		stringVal.length = m_label.length();
 		value[0].string16 = stringVal;
 
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setLabelFunc , 1 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setLabelFunc , 1 , value );
 	}
 }
 
@@ -63,7 +63,7 @@ void UIControl_Base::setLabel(const std::wstring &label, bool instant, bool forc
 		stringVal.length = m_label.length();
 		value[0].string16 = stringVal;
 
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setLabelFunc , 1 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setLabelFunc , 1 , value );
 	}
 }
 
@@ -76,7 +76,7 @@ void UIControl_Base::setLabel(const std::string &label)
 const wchar_t* UIControl_Base::getLabel()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetLabel , 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetLabel , 0 , NULL );
 
 	if(result.type == IGGY_DATATYPE_string_UTF16)
 	{
@@ -100,7 +100,7 @@ void UIControl_Base::setAllPossibleLabels(int labelCount, wchar_t labels[][256])
 		value[i].string16 = stringVal[i];
 	}
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcCheckLabelWidths , labelCount , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcCheckLabelWidths , labelCount , value );
 
 	delete [] value;
 	delete [] stringVal;

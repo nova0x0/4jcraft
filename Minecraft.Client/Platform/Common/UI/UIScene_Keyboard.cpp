@@ -34,7 +34,7 @@ UIScene_Keyboard::UIScene_Keyboard(int iPad, void *initData, UILayer *parentLaye
 	value[0].type = IGGY_DATATYPE_string_UTF16;
 	value[0].string16 = stringVal;
 
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcInitFunctionButtons , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcInitFunctionButtons , 1 , value );
 
 	m_bKeyboardDonePressed = false;
 
@@ -83,7 +83,6 @@ bool UIScene_Keyboard::allowRepeat(int key)
 void UIScene_Keyboard::handleInput(int iPad, int key, bool repeat, bool pressed, bool released, bool &handled)
 {
 	IggyDataValue result;
-	IggyResult out;
 
 	if(repeat || pressed)
 	{
@@ -94,33 +93,33 @@ void UIScene_Keyboard::handleInput(int iPad, int key, bool repeat, bool pressed,
 			handled = true;
 			break;
 		case ACTION_MENU_X:					// X
-			out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcBackspaceButtonPressed, 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcBackspaceButtonPressed, 0 , NULL );
 			handled = true;
 			break;
 		case ACTION_MENU_PAGEUP:			// LT
-			out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSymbolButtonPressed, 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSymbolButtonPressed, 0 , NULL );
 			handled = true;
 			break;
 		case ACTION_MENU_Y:					// Y
-			out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSpaceButtonPressed, 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSpaceButtonPressed, 0 , NULL );
 			handled = true;
 			break;
 		case ACTION_MENU_STICK_PRESS:		// LS
-			out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcCapsButtonPressed, 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcCapsButtonPressed, 0 , NULL );
 			handled = true;
 			break;
 		case ACTION_MENU_LEFT_SCROLL:		// LB
-			out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcCursorLeftButtonPressed, 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcCursorLeftButtonPressed, 0 , NULL );
 			handled = true;
 			break;
 		case ACTION_MENU_RIGHT_SCROLL:		// RB
-			out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcCursorRightButtonPressed, 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcCursorRightButtonPressed, 0 , NULL );
 			handled = true;
 			break;
 		case ACTION_MENU_PAUSEMENU:			// Start
 			if(!m_bKeyboardDonePressed)
 			{
-				out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcDoneButtonPressed, 0 , NULL );
+			    IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcDoneButtonPressed, 0 , NULL );
 				
 				// kick off done timer
 				addTimer(KEYBOARD_DONE_TIMER_ID,KEYBOARD_DONE_TIMER_TIME);

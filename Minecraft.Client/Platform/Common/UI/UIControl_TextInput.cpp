@@ -36,7 +36,7 @@ void UIControl_TextInput::init(const std::wstring &label, int id)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = id;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 2 , value );
 
  #ifdef __PSVITA__
  	// 4J-TomK - add this buttonlist to the vita touch box list
@@ -69,7 +69,7 @@ void UIControl_TextInput::setFocus(bool focus)
 		IggyDataValue value[1];
 		value[0].type = IGGY_DATATYPE_number;
 		value[0].number = focus?0:1;
-		IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcChangeState , 1 , value );
+		IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcChangeState , 1 , value );
 	}
 }
 
@@ -79,5 +79,5 @@ void UIControl_TextInput::SetCharLimit(int iLimit)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = iLimit;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetCharLimit , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetCharLimit , 1 , value );
 }

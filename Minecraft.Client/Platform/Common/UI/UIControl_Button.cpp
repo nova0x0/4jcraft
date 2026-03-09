@@ -33,7 +33,7 @@ void UIControl_Button::init(const std::wstring &label, int id)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = id;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 2 , value );
 
 #ifdef __PSVITA__
 	// 4J-PB - add this button to the vita touch box list
@@ -64,5 +64,5 @@ void UIControl_Button::setEnable(bool enable)
 
 	value[0].type = IGGY_DATATYPE_boolean;
 	value[0].boolval = enable;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcEnableButton , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcEnableButton , 1 , value );
 }

@@ -50,7 +50,7 @@ void UIControl_Slider::init(const std::wstring &label, int id, int min, int max,
 
 	value[4].type = IGGY_DATATYPE_number;
 	value[4].number = (int)current;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 5 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 5 , value );
 
 #ifdef __PSVITA__
 	// 4J-TomK - add slider to the vita touch box list
@@ -86,13 +86,13 @@ void UIControl_Slider::SetSliderTouchPos(float fTouchPos)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = fTouchPos;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetRelativeSliderPos , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetRelativeSliderPos , 1 , value );
 	}
 
 S32 UIControl_Slider::GetRealWidth()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealWidth , 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealWidth , 0 , NULL );
 
 	S32 iRealWidth = m_width;
 	if(result.type == IGGY_DATATYPE_number)

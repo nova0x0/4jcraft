@@ -49,7 +49,6 @@ void IUIScene_StartGame::HandleDLCMountingComplete()
 
 	// first pass - look to see if there are any that are not in the list
 	bool bTexturePackAlreadyListed;
-	bool bNeedToGetTPD=false;
 
 	for(unsigned int i = 0; i < app.GetDLCInfoTexturesOffersCount(); ++i)
 	{
@@ -74,8 +73,6 @@ void IUIScene_StartGame::HandleDLCMountingComplete()
 		if(bTexturePackAlreadyListed==false)
 		{
 			// some missing
-			bNeedToGetTPD=true;
-
 			m_iTexturePacksNotInstalled++;
 		}
 	}

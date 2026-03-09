@@ -33,7 +33,7 @@ void UIControl_LeaderboardList::init(int id)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = id;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
 }
 
 void UIControl_LeaderboardList::ReInit()
@@ -45,7 +45,7 @@ void UIControl_LeaderboardList::ReInit()
 void UIControl_LeaderboardList::clearList()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcResetLeaderboard , 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcResetLeaderboard , 0 , NULL );
 }
 
 void UIControl_LeaderboardList::setupTitles(const std::wstring &rank, const std::wstring &gamertag)
@@ -65,7 +65,7 @@ void UIControl_LeaderboardList::setupTitles(const std::wstring &rank, const std:
 	value[1].type = IGGY_DATATYPE_string_UTF16;
 	value[1].string16 = stringVal1;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetupTitles , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetupTitles , 2 , value );
 }
 
 void UIControl_LeaderboardList::initLeaderboard(int iFirstFocus, int iTotalEntries, int iNumColumns)
@@ -80,7 +80,7 @@ void UIControl_LeaderboardList::initLeaderboard(int iFirstFocus, int iTotalEntri
 
 	value[2].type = IGGY_DATATYPE_number;
 	value[2].number = iNumColumns;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcInitLeaderboard , 3 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcInitLeaderboard , 3 , value );
 
 #ifdef __PSVITA__
 	// 4J-PB - add this button to the vita touch box list
@@ -108,7 +108,7 @@ void UIControl_LeaderboardList::setColumnIcon(int iColumn, int iType)
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = (iType<=32000)?0:(iType-32000);
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetColumnIcon , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSetColumnIcon , 2 , value );
 }
 
 void UIControl_LeaderboardList::addDataSet(bool bLast, int iId, int iRank, const std::wstring &gamertag, bool bDisplayMessage, const std::wstring &col0, const std::wstring &col1, const std::wstring &col2, const std::wstring &col3, const std::wstring &col4, const std::wstring &col5, const std::wstring &col6)
@@ -217,7 +217,7 @@ void UIControl_LeaderboardList::addDataSet(bool bLast, int iId, int iRank, const
 		value[11].type = IGGY_DATATYPE_string_UTF16;
 		value[11].string16 = stringVal7;
 	}
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcAddDataSet , 12 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcAddDataSet , 12 , value );
 }
 
 #ifdef __PSVITA__

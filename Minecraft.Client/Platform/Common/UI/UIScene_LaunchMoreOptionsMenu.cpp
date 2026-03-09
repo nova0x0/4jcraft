@@ -28,7 +28,7 @@ UIScene_LaunchMoreOptionsMenu::UIScene_LaunchMoreOptionsMenu(int iPad, void *ini
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = m_params->bGenerateOptions?0:1;
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetMenuType , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcSetMenuType , 1 , value );
 
 	m_bMultiplayerAllowed = ProfileManager.IsSignedInLive( m_params->iPad ) && ProfileManager.AllowedToPlayMultiplayer(m_params->iPad);
 	
@@ -106,11 +106,6 @@ UIScene_LaunchMoreOptionsMenu::UIScene_LaunchMoreOptionsMenu(int iPad, void *ini
 #else
 	std::wstring wsText=app.GetString(IDS_GAMEOPTION_ONLINE);
 #endif
-	EHTMLFontSize size = eHTMLSize_Normal;
-	if(!RenderManager.IsHiDef() && !RenderManager.IsWidescreen())
-	{
-		size = eHTMLSize_Splitscreen;
-	}
 	wchar_t startTags[64];
 	swprintf(startTags,64,L"<font color=\"#%08x\">",app.GetHTMLColour(eHTMLColor_White));
 	wsText= startTags + wsText;
@@ -251,7 +246,7 @@ void UIScene_LaunchMoreOptionsMenu::handleInput(int iPad, int key, bool repeat, 
 			m_tabIndex = m_tabIndex == 0 ? 1 : 0;
 			updateTooltips();
 			IggyDataValue result;
-			IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcChangeTab , 0 , NULL );
+			IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ), m_funcChangeTab , 0 , NULL );
 		}
 		break;
 	}
@@ -303,6 +298,8 @@ void UIScene_LaunchMoreOptionsMenu::handleCheckboxToggled(F64 controlId, bool se
 	case eLaunchCheckbox_DisableSaving:
 		m_params->bDisableSaving = selected;
 		break;
+        default:
+                break;
 	};
 }
 
@@ -361,11 +358,6 @@ void UIScene_LaunchMoreOptionsMenu::handleFocusChange(F64 controlId, F64 childId
 	};
 
 	std::wstring wsText=app.GetString(stringId);	
-	EHTMLFontSize size = eHTMLSize_Normal;
-	if(!RenderManager.IsHiDef() && !RenderManager.IsWidescreen())
-	{
-		size = eHTMLSize_Splitscreen;
-	}
 	wchar_t startTags[64];
 	swprintf(startTags,64,L"<font color=\"#%08x\">",app.GetHTMLColour(eHTMLColor_White));
 	wsText= startTags + wsText;

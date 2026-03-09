@@ -39,7 +39,7 @@ void UIControl_TexturePackList::init(const std::wstring &label, int id)
 
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = id;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 2 , value );
 
 #ifdef __PSVITA__
 	// 4J-TomK - add this texturepack list to the vita touch box list
@@ -68,7 +68,7 @@ void UIControl_TexturePackList::addPack(int id, const std::wstring &textureName)
 	stringVal.string = (IggyUTF16*)textureName.c_str();
 	stringVal.length = textureName.length();
 	value[1].string16 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addPackFunc ,2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addPackFunc ,2 , value );
 }
 
 void UIControl_TexturePackList::selectSlot(int id)
@@ -77,13 +77,13 @@ void UIControl_TexturePackList::selectSlot(int id)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = id;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSelectSlot ,1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcSelectSlot ,1 , value );
 }
 
 void UIControl_TexturePackList::clearSlots()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_clearSlotsFunc ,0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_clearSlotsFunc ,0 , NULL );
 }
 
 void UIControl_TexturePackList::setEnabled(bool enable)
@@ -92,7 +92,7 @@ void UIControl_TexturePackList::setEnabled(bool enable)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_boolean;
 	value[0].number = enable;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcEnableSelector ,1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_funcEnableSelector ,1 , value );
 }
 
 void UIControl_TexturePackList::SetTouchFocus(S32 iX, S32 iY, bool bRepeat)
@@ -107,7 +107,7 @@ void UIControl_TexturePackList::SetTouchFocus(S32 iX, S32 iY, bool bRepeat)
 	value[2].type = IGGY_DATATYPE_boolean;
 	value[2].boolval = bRepeat;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcSetTouchFocus, 3 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcSetTouchFocus, 3 , value );
 }
 
 bool UIControl_TexturePackList::CanTouchTrigger(S32 iX, S32 iY)
@@ -120,7 +120,7 @@ bool UIControl_TexturePackList::CanTouchTrigger(S32 iX, S32 iY)
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = iY;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcCanTouchTrigger, 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie(), &result, getIggyValuePath(), m_funcCanTouchTrigger, 2 , value );
 
 	S32 bCanTouchTrigger = false;
 	if(result.type == IGGY_DATATYPE_boolean)
@@ -133,7 +133,7 @@ bool UIControl_TexturePackList::CanTouchTrigger(S32 iX, S32 iY)
 S32 UIControl_TexturePackList::GetRealHeight()
 {
 	IggyDataValue result;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealHeight, 0 , NULL );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcGetRealHeight, 0 , NULL );
 
 	S32 iRealHeight = m_height;
 	if(result.type == IGGY_DATATYPE_number)

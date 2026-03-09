@@ -36,7 +36,6 @@ UIScene_DebugOptionsMenu::UIScene_DebugOptionsMenu(int iPad, void *initData, UIL
 
 	unsigned int uiDebugBitmask=app.GetGameSettingsDebugMask(iPad);
 
-	IggyValuePath *root = IggyPlayerRootPath ( getMovie() );
 	for(m_iTotalCheckboxElements = 0; m_iTotalCheckboxElements < eDebugSetting_Max && m_iTotalCheckboxElements < 21; ++m_iTotalCheckboxElements)
 	{
 		std::wstring label(m_DebugCheckboxTextA[m_iTotalCheckboxElements]);

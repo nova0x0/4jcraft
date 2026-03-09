@@ -347,8 +347,6 @@ int IUIScene_PauseMenu::SaveWorldThreadProc( LPVOID lpParameter )
 	Vec3::UseDefaultThreadStorage();
 	Compression::UseDefaultThreadStorage();
 
-	Minecraft *pMinecraft=Minecraft::GetInstance();
-
 	//wprintf(L"Loading world on thread\n");
 
 	if(ProfileManager.IsFullVersion())

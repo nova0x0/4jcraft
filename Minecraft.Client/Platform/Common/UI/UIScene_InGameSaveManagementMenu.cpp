@@ -366,8 +366,6 @@ void UIScene_InGameSaveManagementMenu::tick()
 
 void UIScene_InGameSaveManagementMenu::GetSaveInfo(  )
 {
-	unsigned int uiSaveC=0;
-
 	// This will return with the number retrieved in uiSaveC
 
 	// clear the saves list
@@ -379,7 +377,7 @@ void UIScene_InGameSaveManagementMenu::GetSaveInfo(  )
 	m_pSaveDetails=StorageManager.ReturnSavesInfo();
 	if(m_pSaveDetails==NULL)
 	{
-		C4JStorage::ESaveGameState eSGIStatus= StorageManager.GetSavesInfo(m_iPad,NULL,this,(char*)"save"); 
+		StorageManager.GetSavesInfo(m_iPad,NULL,this,(char*)"save"); 
 	}
 
 

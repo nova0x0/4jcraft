@@ -41,7 +41,7 @@ void UIControl_CheckBox::init(const std::wstring &label, int id, bool checked)
 
 	value[2].type = IGGY_DATATYPE_boolean;
 	value[2].boolval = checked;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 3 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 3 , value );
 
 #ifdef __PSVITA__
 	// 4J-TomK - add checkbox to the vita touch box list
@@ -60,7 +60,7 @@ void UIControl_CheckBox::init(const std::wstring &label, int id, bool checked)
 bool UIControl_CheckBox::IsChecked()
 {
 	rrbool checked = false;
-	IggyResult result = IggyValueGetBooleanRS ( &m_iggyPath , m_checkedProp, NULL, &checked );
+	IggyValueGetBooleanRS ( &m_iggyPath , m_checkedProp, NULL, &checked );
 	m_bChecked = checked;
 	return checked;
 }
@@ -78,7 +78,7 @@ void UIControl_CheckBox::SetEnable(bool enable)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_boolean;
 	value[0].boolval = enable;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcEnable , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcEnable , 1 , value );
 }
 
 // 4J HEG - this is only ever used when required, most of this should happen in the flash
@@ -88,7 +88,7 @@ void UIControl_CheckBox::setChecked(bool checked)
  	IggyDataValue value[1];
  	value[0].type = IGGY_DATATYPE_boolean;
  	value[0].boolval = checked;
- 	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetCheckBox , 1 , value );
+ 	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetCheckBox , 1 , value );
 }
 
 // 4J-TomK we need to trigger this one via function instead of key down event because of how it works
@@ -98,7 +98,7 @@ void UIControl_CheckBox::TouchSetCheckbox(bool checked)
  	IggyDataValue value[1];
  	value[0].type = IGGY_DATATYPE_boolean;
  	value[0].boolval = checked;
- 	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetCheckBox , 1 , value );
+ 	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_funcSetCheckBox , 1 , value );
 }
 
 void UIControl_CheckBox::ReInit()

@@ -374,6 +374,8 @@ void IUIScene_AbstractContainerMenu::onMouseTick()
 			case eTapNone:
 				/// Nothing to do, input is not a tap.
 				break;
+                        default:
+                                break;
 			}
 #endif // TAP_DETECTION
 
@@ -632,11 +634,13 @@ void IUIScene_AbstractContainerMenu::onMouseTick()
 				iDesiredSlotX = m_iCurrSlotX;
 				iDesiredSlotY = m_iCurrSlotY;
 				break;
+                        default:
+                                break;
 			}
 
 			int iNumRows;
 			int iNumColumns;
-			int iNumItems = GetSectionDimensions( eSectionUnderPointer, &( iNumColumns ), &( iNumRows ) );
+			GetSectionDimensions( eSectionUnderPointer, &( iNumColumns ), &( iNumRows ) );
 
 
 			if ( (m_eCurrTapState != eTapNone && m_eCurrTapState != eTapStateNoInput) &&
@@ -648,9 +652,6 @@ void IUIScene_AbstractContainerMenu::onMouseTick()
 				eSectionUnderPointer = GetSectionAndSlotInDirection( eSectionUnderPointer, m_eCurrTapState, &iDesiredSlotX, &iDesiredSlotY );
 
 				if(!IsSectionSlotList(eSectionUnderPointer)) bPointerIsOverSlot = false;
-
-				// Get the details for the new section
-				iNumItems = GetSectionDimensions( eSectionUnderPointer, &( iNumColumns ), &( iNumRows ) );
 			}
 
 			if ( !IsSectionSlotList(eSectionUnderPointer) || ( ( iDesiredSlotX >= 0 ) && ( iDesiredSlotX < iNumColumns ) && ( iDesiredSlotY >= 0 ) && ( iDesiredSlotY < iNumRows ) ) )

@@ -635,7 +635,7 @@ void UIController::CleanUpSkinReload()
 #ifdef _DURANGO			
 			DWORD result = StorageManager.UnmountInstalledDLC(L"TPACK");
 #else
-			DWORD result = StorageManager.UnmountInstalledDLC("TPACK");
+			StorageManager.UnmountInstalledDLC("TPACK");
 #endif
 		}
 	}

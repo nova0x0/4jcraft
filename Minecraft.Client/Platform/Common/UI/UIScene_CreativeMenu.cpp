@@ -240,7 +240,7 @@ void UIScene_CreativeMenu::updateTabHighlightAndText(ECreativeInventoryTabs tab)
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = (F64)tab;
 
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ) , m_funcSetActiveTab , 1 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ) , m_funcSetActiveTab , 1 , value );
 
 	m_labelInventory.setLabel(app.GetString(specs[tab]->m_descriptionId));
 }
@@ -491,5 +491,5 @@ void UIScene_CreativeMenu::updateScrollCurrentPage(int currentPage, int pageCoun
 	value[1].type = IGGY_DATATYPE_number;
 	value[1].number = (F64)currentPage - 1;
 
-	IggyResult out = IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ) , m_funcSetScrollBar , 2 , value );
+	IggyPlayerCallMethodRS ( getMovie() , &result, IggyPlayerRootPath( getMovie() ) , m_funcSetScrollBar , 2 , value );
 }

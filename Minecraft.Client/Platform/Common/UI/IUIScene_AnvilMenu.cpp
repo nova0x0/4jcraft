@@ -176,6 +176,8 @@ void IUIScene_AnvilMenu::handleOtherClicked(int iPad, ESceneSection eSection, in
 	case eSectionAnvilName:
 		handleEditNamePressed();
 		break;
+        default:
+                break;
 	};
 }
 
@@ -189,6 +191,8 @@ bool IUIScene_AnvilMenu::IsSectionSlotList( ESceneSection eSection )
 	case eSectionAnvilItem2:
 	case eSectionAnvilResult:
 		return true;
+        default:
+                break;
 	}
 	return false;
 }

@@ -29,7 +29,7 @@ void UIControl_Label::init(const std::wstring &label)
 	stringVal.string = (IggyUTF16*)label.c_str();
 	stringVal.length = label.length();
 	value[0].string16 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
 }
 
 void UIControl_Label::init(const std::string &label)
@@ -43,7 +43,7 @@ void UIControl_Label::init(const std::string &label)
 	stringVal.string = (char *)label.c_str();
 	stringVal.length = label.length();
 	value[0].string8 = stringVal;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
 }
 
 void UIControl_Label::ReInit()

@@ -33,7 +33,7 @@ void UIControl_SlotList::addSlot(int id)
 	value[1].boolval = false;
 	value[2].type = IGGY_DATATYPE_boolean;
 	value[2].boolval = false;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addSlotFunc ,3 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_addSlotFunc ,3 , value );
 }
 
 void UIControl_SlotList::addSlots(int iStartValue, int iCount)
@@ -67,7 +67,7 @@ void UIControl_SlotList::setSlotHighlighted(int index, bool highlight)
 
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = highlight;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_setHighlightFunc , 2 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_setHighlightFunc , 2 , value );
 }
 
 void UIControl_SlotList::showSlotRedBox(int index, bool show)
@@ -80,7 +80,7 @@ void UIControl_SlotList::showSlotRedBox(int index, bool show)
 
 	value[1].type = IGGY_DATATYPE_boolean;
 	value[1].boolval = show;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_setRedBoxFunc , 2, value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath(), m_setRedBoxFunc , 2, value );
 }
 
 void UIControl_SlotList::setFocus(bool focus)

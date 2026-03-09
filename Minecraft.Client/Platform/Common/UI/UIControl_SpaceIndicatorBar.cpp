@@ -40,7 +40,7 @@ void UIControl_SpaceIndicatorBar::init(const std::wstring &label, int id, __int6
 	stringVal.length = label.length();
 	value[0].string16 = stringVal;
 
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_initFunc , 1 , value );
 }
 
 void UIControl_SpaceIndicatorBar::ReInit()
@@ -96,7 +96,7 @@ void UIControl_SpaceIndicatorBar::setSaveSize(__int64 size)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = percent;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setSaveSizeFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setSaveSizeFunc , 1 , value );
 }
 
 void UIControl_SpaceIndicatorBar::setTotalSize(__int64 size)
@@ -107,7 +107,7 @@ void UIControl_SpaceIndicatorBar::setTotalSize(__int64 size)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = percent;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setTotalSizeFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setTotalSizeFunc , 1 , value );
 }
 
 void UIControl_SpaceIndicatorBar::setSaveGameOffset(float offset)
@@ -118,5 +118,5 @@ void UIControl_SpaceIndicatorBar::setSaveGameOffset(float offset)
 	IggyDataValue value[1];
 	value[0].type = IGGY_DATATYPE_number;
 	value[0].number = m_currentOffset;
-	IggyResult out = IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setSaveGameOffsetFunc , 1 , value );
+	IggyPlayerCallMethodRS ( m_parentScene->getMovie() , &result, getIggyValuePath() , m_setSaveGameOffsetFunc , 1 , value );
 }
