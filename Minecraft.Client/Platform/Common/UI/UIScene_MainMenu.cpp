@@ -418,7 +418,10 @@ void UIScene_MainMenu::RunAction(int iPad)
 		WXS::User^ user = ProfileManager.GetUser(ProfileManager.GetPrimaryPad());
 		Windows::Xbox::ApplicationModel::Help::Show(user);
 		break;
+                break;
 #endif
+        default:
+                break;
 	}
 }
 

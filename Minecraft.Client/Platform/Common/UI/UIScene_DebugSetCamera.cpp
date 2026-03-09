@@ -150,6 +150,8 @@ int UIScene_DebugSetCamera::KeyboardCompleteCallback(LPVOID lpParam,bool bRes)
 			pClass->m_textInputElevation.setLabel(value);
 			pClass->currentPosition->m_elev = val;
 			break;
+                default:
+                        break;
 		}
 	}
 

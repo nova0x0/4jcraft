@@ -598,6 +598,8 @@ void UIScene_HUD::render(S32 width, S32 height, C4JRender::eViewportType viewpor
 			xPos = (S32)(ui.getScreenWidth() / 2);
 			yPos = (S32)(ui.getScreenHeight() / 2);
 			break;
+                default:
+                        break;
 		}
 		ui.setupRenderPosition(xPos, yPos);
 
@@ -626,6 +628,8 @@ void UIScene_HUD::render(S32 width, S32 height, C4JRender::eViewportType viewpor
 		case C4JRender::VIEWPORT_TYPE_QUADRANT_BOTTOM_RIGHT:
 			tileYStart = (S32)(m_movieHeight / 2);
 			break;
+                default:
+                        break;
 		}
 
 		IggyPlayerSetDisplaySize( getMovie(), m_movieWidth, m_movieHeight );
@@ -711,6 +715,8 @@ void UIScene_HUD::repositionHud()
 	case C4JRender::VIEWPORT_TYPE_SPLIT_BOTTOM:
 		width = (S32)(ui.getScreenWidth());
 		break;
+        default:
+                break;
 	}
 
 	app.DebugPrintf(app.USER_SR, "Reposition HUD with dims %d, %d\n", width, height );

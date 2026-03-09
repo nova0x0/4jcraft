@@ -1428,6 +1428,8 @@ bool UIController::NavigateToScene(int iPad, EUIScene scene, void *initData, EUI
 			app.DebugPrintf("IGNORING NAVIGATE - we're trying to navigate to a user selected scene when there's already a scene up: pad:%d, scene:%d\n", iPad, scene);
 			return false;
 			break;
+                default:
+                    break;
 		}
 	}
 
@@ -1453,6 +1455,8 @@ bool UIController::NavigateToScene(int iPad, EUIScene scene, void *initData, EUI
 			layer = eUILayer_Scene;
 		}
 		break;
+        default:
+                break;
 	};
 	int menuDisplayedPad = XUSER_INDEX_ANY;
 	if(group == eUIGroup_PAD)
